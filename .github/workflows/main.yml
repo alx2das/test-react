@@ -1,0 +1,20 @@
+name: Test-React
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        run: yarn install --frozen-lockfile
+
+      - name: Testing
+        run: yarn test
